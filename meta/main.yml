@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  author: Michael Buluma
+  namespace: buluma
+  role_name: netiq_sentinel_syslog_event_source
+  description: Ansible role for setting up a linux host as an event source to NetIQ Sentinel.
+  company: ShadowNet
+  license: Apache-2.0
+  min_ansible_version: 2.4
+  platforms:
+    - name: OpenSUSE
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+
+  galaxy_tags:
+    - netiq
+    - authentication
+    - sentinel
+
+dependencies: []

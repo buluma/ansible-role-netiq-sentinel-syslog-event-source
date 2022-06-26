@@ -1,0 +1,12 @@
+---
+# handlers file for netiq-sentinel-syslog-event-source
+- name: restart syslog
+  become: true
+  ansible.builtin.service: name=syslog state=restarted
+
+- name: restart rsyslog
+  become: true
+  ansible.builtin.service: name=rsyslog state=restarted
+
+- name: send magic message
+  ansible.builtin.command: logger -t kernel {{ sentinel_collector_magic }}

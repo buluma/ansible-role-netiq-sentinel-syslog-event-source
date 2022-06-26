@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Ansible role for setting up a linux host as an event source to NetIQ Sentinel.
+  homepage: https://buluma.github.io/
+  topics: netiq, authentication, sentinel, ansible, molecule, tox, playbook, hacktoberfest
