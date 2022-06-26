@@ -12,9 +12,9 @@
     - default.yml
 
 - name: configure rsyslog
-  ansible.builtin.include: rsyslog.yml
+  ansible.builtin.include_tasks: rsyslog.yml
   when: syslog_implementation == 'rsyslog'
 
 - name: configure syslog-ng
-  ansible.builtin.include: syslog-ng.yml
+  ansible.builtin.include_tasks: syslog-ng.yml
   when: syslog_implementation == 'syslog-ng'
