@@ -17,7 +17,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   gather_facts: yes
 
   roles:
-    - role: buluma.netiq_idm
+    - role: buluma.netiq_sentinel_syslog_event_source
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
@@ -42,7 +42,6 @@ The default values for the variables are set in `defaults/main.yml`:
 sentinel_syslog_server: sentinel.example.com
 sentinel_syslog_port: 1468
 sentinel_syslog_protocol: tcp
-
 ```
 
 ## [Requirements](#requirements)
