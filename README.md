@@ -11,27 +11,23 @@ Ansible role for setting up a linux host as an event source to NetIQ Sentinel.
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
----
-- name: Converge
+- become: true
+  gather_facts: true
   hosts: all
-  become: yes
-  gather_facts: yes
-
+  name: Converge
   roles:
-    - role: buluma.netiq_sentinel_syslog_event_source
+  - role: buluma.netiq_sentinel_syslog_event_source
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/molecule/default/prepare.yml):
 
 ```yaml
----
-- name: Prepare
+- become: true
+  gather_facts: false
   hosts: all
-  become: yes
-  gather_facts: no
-
+  name: Prepare
   roles:
-    - role: buluma.bootstrap
+  - role: buluma.bootstrap
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -41,11 +37,9 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/defaults/main.yml):
 
 ```yaml
----
-# defaults file for netiq-sentinel-syslog-event-source
-sentinel_syslog_server: sentinel.example.com
 sentinel_syslog_port: 1468
 sentinel_syslog_protocol: tcp
+sentinel_syslog_server: sentinel.example.com
 ```
 
 ## [Requirements](#requirements)

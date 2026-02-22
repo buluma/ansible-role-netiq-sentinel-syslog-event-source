@@ -1,98 +1,91 @@
----
-image: "buluma/github-action-molecule:4.0.7"
-
-services:
-  - docker:dind
-
-variables:
-  DOCKER_HOST: "tcp://docker:2375"
-  PY_COLORS: 1
-
-molecule:
-  stage: build
-  allow_failure: true
-  script:
-    - image=${image} tag=${tag} molecule test
-  retry: 1
-  parallel:
-    matrix:
-      - image: "docker-opensuse-systemd"
-        tag: "latest"
-      - image: "enterpriselinux"
-        tag: "7"
-      - image: "enterpriselinux"
-        tag: "latest"
-      - image: "fedora-systemd"
-        tag: "34"
-      - image: "fedora-systemd"
-        tag: "35"
-      - image: "fedora-systemd"
-        tag: "latest"
-
-testing:
-  stage: test
-  needs: []
-  script:
-    - image=${image} tag=${tag} molecule test
-  rules:
-    - if: $CI_COMMIT_REF_NAME == "testing"
-  retry: 1
-  parallel:
-    matrix:
-      - image: "docker-opensuse-systemd"
-        tag: "latest"
-      - image: "enterpriselinux"
-        tag: "7"
-      - image: "enterpriselinux"
-        tag: "latest"
-      - image: "fedora-systemd"
-        tag: "34"
-      - image: "fedora-systemd"
-        tag: "35"
-      - image: "fedora-systemd"
-        tag: "latest"
-
 galaxy:
+  needs: []
+  script:
+  - ansible-galaxy role info buluma.netiq-sentinel-syslog-event-source
   stage: deploy
-  needs: []
-  script:
-    - ansible-galaxy role info buluma.netiq-sentinel-syslog-event-source
-
-role_testing:
-  stage: test
-  needs: []
-  script:
-    - image=${image} tag=${tag} ansible-galaxy install buluma.netiq-sentinel-syslog-event-source
-  retry: 1
+image: buluma/github-action-molecule:4.0.7
+molecule:
+  allow_failure: true
   parallel:
     matrix:
-      - image: "docker-opensuse-systemd"
-        tag: "latest"
-      - image: "enterpriselinux"
-        tag: "7"
-      - image: "enterpriselinux"
-        tag: "latest"
-      - image: "fedora-systemd"
-        tag: "34"
-      - image: "fedora-systemd"
-        tag: "35"
-      - image: "fedora-systemd"
-        tag: "latest"
-
-release_job:
-  stage: .post
-  needs: [molecule]
-  image: registry.gitlab.com/gitlab-org/release-cli:latest
-  rules:
-    - if: $CI_COMMIT_TAG
+    - image: docker-opensuse-systemd
+      tag: latest
+    - image: enterpriselinux
+      tag: '7'
+    - image: enterpriselinux
+      tag: latest
+    - image: fedora-systemd
+      tag: '34'
+    - image: fedora-systemd
+      tag: '35'
+    - image: fedora-systemd
+      tag: latest
+  retry: 1
   script:
-    - echo "Running the release job."
-  release:
-    tag_name: $CI_COMMIT_TAG
-    name: 'Release $CI_COMMIT_TAG'
-    description: 'Release created using the release-cli.'
+  - image=${image} tag=${tag} molecule test
+  stage: build
+release_job:
   artifacts:
-    name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
-    paths:
-      - /
     expire_in: 1 day
+    name: $CI_JOB_STAGE-$CI_COMMIT_REF_NAME
+    paths:
+    - /
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  needs:
+  - molecule
+  release:
+    description: Release created using the release-cli.
+    name: Release $CI_COMMIT_TAG
+    tag_name: $CI_COMMIT_TAG
+  rules:
+  - if: $CI_COMMIT_TAG
+  script:
+  - echo "Running the release job."
+  stage: .post
+role_testing:
+  needs: []
+  parallel:
+    matrix:
+    - image: docker-opensuse-systemd
+      tag: latest
+    - image: enterpriselinux
+      tag: '7'
+    - image: enterpriselinux
+      tag: latest
+    - image: fedora-systemd
+      tag: '34'
+    - image: fedora-systemd
+      tag: '35'
+    - image: fedora-systemd
+      tag: latest
+  retry: 1
+  script:
+  - image=${image} tag=${tag} ansible-galaxy install buluma.netiq-sentinel-syslog-event-source
+  stage: test
+services:
+- docker:dind
+testing:
+  needs: []
+  parallel:
+    matrix:
+    - image: docker-opensuse-systemd
+      tag: latest
+    - image: enterpriselinux
+      tag: '7'
+    - image: enterpriselinux
+      tag: latest
+    - image: fedora-systemd
+      tag: '34'
+    - image: fedora-systemd
+      tag: '35'
+    - image: fedora-systemd
+      tag: latest
+  retry: 1
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "testing"
+  script:
+  - image=${image} tag=${tag} molecule test
+  stage: test
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  PY_COLORS: 1
