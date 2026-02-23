@@ -1,9 +1,9 @@
 ---
-  - ansible.builtin.service: name=syslog state=restarted
-    become: true
-    name: restart syslog
-  - ansible.builtin.service: name=rsyslog state=restarted
-    become: true
-    name: restart rsyslog
-  - ansible.builtin.command: logger -t kernel {{ sentinel_collector_magic }}
-    name: send magic message
+- ansible.builtin.service: name=syslog state=restarted
+  become: true
+  name: restart syslog
+- ansible.builtin.service: name=rsyslog state=restarted
+  become: true
+  name: restart rsyslog
+- ansible.builtin.command: logger -t kernel {{ sentinel_collector_magic }}
+  name: send magic message
