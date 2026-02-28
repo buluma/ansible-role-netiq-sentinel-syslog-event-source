@@ -1,6 +1,7 @@
 ---
 - ansible.builtin.blockinfile:
-    block: 'destination d_sentinel { tcp( "{{ sentinel_syslog_server }}" port( {{
+    block:
+      'destination d_sentinel { tcp( "{{ sentinel_syslog_server }}" port( {{
       sentinel_syslog_port }} )); };
 
       log { source(src); destination(d_sentinel); };
@@ -9,5 +10,5 @@
     path: /etc/syslog-ng/syslog-ng.conf
   name: deploy syslog-ng config for clients
   notify:
-  - restart syslog
-  - send magic message
+    - restart syslog
+    - send magic message

@@ -4,5 +4,5 @@
   become: true
   name: deploy rsyslog config for clients
   notify:
-  - restart rsyslog
-  - send magic message
+    - restart rsyslog
+    - send magic message

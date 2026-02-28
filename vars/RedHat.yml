@@ -3,5 +3,5 @@ sentinel_collector_magic: Red Hat Enterprise Linux
 syslog_conf_path: /etc/rsyslog.d
 syslog_implementation: rsyslog
 syslog_package_names:
-- rsyslog
+  - rsyslog
 syslog_service_name: rsyslog
