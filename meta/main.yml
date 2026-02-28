@@ -3,7 +3,7 @@ dependencies: []
 galaxy_info:
   author: Michael Buluma
   company: ShadowNet
-  description: Ansible role for setting up a linux host as an event source to 
+  description: Ansible role for setting up a linux host as an event source to
     NetIQ Sentinel.
   galaxy_tags:
     - netiq
