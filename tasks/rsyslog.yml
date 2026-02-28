@@ -1,5 +1,5 @@
 ---
-- ansible.builtin.template: src=rsyslog-remote.conf.j2 dest={{ syslog_conf_path 
+- ansible.builtin.template: src=rsyslog-remote.conf.j2 dest={{ syslog_conf_path
     }}/sentinel.conf owner=root group=root mode=0644
   become: true
   name: deploy rsyslog config for clients

@@ -61,7 +61,7 @@ role_testing:
       tag: latest
   retry: 1
   script:
-  - image=${image} tag=${tag} ansible-galaxy install 
+  - image=${image} tag=${tag} ansible-galaxy install
     buluma.netiq-sentinel-syslog-event-source
   stage: test
 services:
