@@ -1,6 +1,6 @@
 ---
-- ansible.builtin.include_vars: "{{ item }}"
-  name: set OS dependent variables
+- name: Set OS dependent variables
+  ansible.builtin.include_vars: "{{ item }}"
   tags:
     - prereq
   with_first_found:
@@ -9,9 +9,9 @@
     - "{{ ansible_os_family }}_{{ ansible_distribution_major_version }}.yml"
     - "{{ ansible_os_family }}.yml"
     - default.yml
-- ansible.builtin.include_tasks: rsyslog.yml
-  name: configure rsyslog
+- name: Configure rsyslog
+  ansible.builtin.include_tasks: rsyslog.yml
   when: syslog_implementation == 'rsyslog'
-- ansible.builtin.include_tasks: syslog-ng.yml
-  name: configure syslog-ng
+- name: Configure syslog-ng
+  ansible.builtin.include_tasks: syslog-ng.yml
   when: syslog_implementation == 'syslog-ng'

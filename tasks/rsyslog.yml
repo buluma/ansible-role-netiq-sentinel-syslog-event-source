@@ -1,8 +1,12 @@
 ---
-- ansible.builtin.template: src=rsyslog-remote.conf.j2 dest={{ syslog_conf_path
-    }}/sentinel.conf owner=root group=root mode=0644
+- name: rsyslog | Deploy rsyslog config for clients
+  ansible.builtin.template:
+    src: rsyslog-remote.conf.j2
+    dest: "{{ syslog_conf_path }}/sentinel.conf"
+    owner: root
+    group: root
+    mode: "0644"
   become: true
-  name: deploy rsyslog config for clients
   notify:
-    - restart rsyslog
-    - send magic message
+    - Restart rsyslog
+    - Send magic message

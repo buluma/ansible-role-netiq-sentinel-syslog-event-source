@@ -4,4 +4,4 @@
   hosts: all
   name: Converge
   roles:
-  - role: buluma.netiq_sentinel_syslog_event_source
+    - role: buluma.netiq_sentinel_syslog_event_source
