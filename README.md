@@ -41,7 +41,6 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 ```yaml
 ---
 sentinel_syslog_port: 1468
-sentinel_syslog_protocol: tcp
 sentinel_syslog_server: sentinel.example.com
 ```
 
@@ -71,7 +70,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|[opensuse](https://hub.docker.com/r/robertdebock/opensuse)|all|
 |[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|all|
 |[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
 
@@ -90,3 +88,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [Michael Buluma](https://buluma.github.io/)
+
