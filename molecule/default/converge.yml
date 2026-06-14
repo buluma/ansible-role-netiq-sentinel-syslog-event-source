@@ -1,8 +1,7 @@
 ---
 - name: Converge
+  hosts: all
   become: true
   gather_facts: true
-- name: Converge
-  hosts: all
   roles:
     - role: buluma.netiq_sentinel_syslog_event_source
