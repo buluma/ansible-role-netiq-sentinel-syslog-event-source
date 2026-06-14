@@ -1,0 +1,16 @@
+---
+- name: Verify
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Check if rsyslog is running
+      ansible.builtin.service_facts:
+
+    - name: Assert rsyslog is active
+      ansible.builtin.assert:
+        that:
+          - "'rsyslog' in services"
+          - "services['rsyslog']['state'] == 'running'"
+        quiet: true
