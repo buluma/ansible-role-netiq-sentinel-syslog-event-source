@@ -1,4 +1,10 @@
 ---
+- name: rsyslog | Install rsyslog
+  ansible.builtin.package:
+    name: "{{ syslog_package_names }}"
+    state: present
+  become: true
+
 - name: rsyslog | Deploy rsyslog config for clients
   ansible.builtin.template:
     src: rsyslog-remote.conf.j2

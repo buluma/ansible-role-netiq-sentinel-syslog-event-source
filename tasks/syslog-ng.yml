@@ -1,4 +1,10 @@
 ---
+- name: syslog-ng | Install syslog-ng
+  ansible.builtin.package:
+    name: "{{ syslog_package_names }}"
+    state: present
+  become: true
+
 - name: syslog-ng | Deploy syslog-ng config for clients
   ansible.builtin.blockinfile:
     block: 'destination d_sentinel { tcp( "{{ sentinel_syslog_server }}" port( {{ sentinel_syslog_port }} )); };
