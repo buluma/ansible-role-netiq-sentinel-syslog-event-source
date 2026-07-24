@@ -14,7 +14,11 @@ lint: |
 driver:
   name: docker
 platforms:
-  - name: "netiq-sentinel-syslog-event-source-${image:-fedora}-${tag:-latest}"
+  # Shortened prefix (not the full role name): the combined container name
+  # (role name + "-docker-molecule-images-" + tag) exceeded Linux's 64-char
+  # hostname limit for this role's unusually long name, causing docker to
+  # fail with "sethostname: invalid argument" on every platform.
+  - name: "netiq-sentinel-${image:-fedora}-${tag:-latest}"
     image: "${namespace:-buluma}/${image:-fedora}:${tag:-latest}"
     command: /lib/systemd/systemd
     cgroupns_mode: host
