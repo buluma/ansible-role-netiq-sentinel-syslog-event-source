@@ -11,6 +11,6 @@
     - name: Assert rsyslog is active
       ansible.builtin.assert:
         that:
-          - "'rsyslog' in services"
-          - "services['rsyslog']['state'] == 'running'"
+          - "'rsyslog' in ansible_facts.services"
+          - "ansible_facts.services['rsyslog']['state'] == 'running'"
         quiet: true
