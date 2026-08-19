@@ -4,3 +4,4 @@ syslog_implementation: rsyslog
 syslog_package_names:
   - rsyslog
 syslog_service_name: rsyslog
+sentinel_collector_magic: Debian GNU/Linux
