@@ -4,7 +4,11 @@
 platforms:
   - name: EL
     versions:
-      - "10"
+      # Excludes 10: rsyslog 8.2510's capng_apply() capability-drop at
+      # startup fails under EL10's rsyslog.service (NoNewPrivileges=yes)
+      # inside containers -- "could not transfer the specified internal
+      # posix capabilities settings to the kernel, capng_apply=-4"
+      # (rsyslog.com/e/2455). OS packaging issue, not fixable from here.
       - "9"
   - name: Debian
     versions:
