@@ -72,6 +72,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 ---
 sentinel_syslog_port: 1468
 sentinel_syslog_server: sentinel.example.com
+syslog_implementation: rsyslog
 ```
 
 ## [Requirements](#requirements)
