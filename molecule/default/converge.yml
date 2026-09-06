@@ -30,6 +30,17 @@
         - name: DEBUG | print rsyslog journal
           ansible.builtin.debug:
             var: __debug_rsyslog_journal.stdout_lines
+        # rsyslog.service sets StandardOutput=null, which swallows rsyslogd's
+        # own parse-error text before it reaches the journal. Run it
+        # directly to see the real error.
+        - name: DEBUG | rsyslogd config check
+          ansible.builtin.command: rsyslogd -N1 -f /etc/rsyslog.conf
+          register: __debug_rsyslogd_n1
+          changed_when: false
+          failed_when: false
+        - name: DEBUG | print rsyslogd config check
+          ansible.builtin.debug:
+            msg: "rc={{ __debug_rsyslogd_n1.rc }} stdout={{ __debug_rsyslogd_n1.stdout_lines }} stderr={{ __debug_rsyslogd_n1.stderr_lines }}"
         - name: Re-raise original failure
           ansible.builtin.fail:
             msg: "Role failed - see DEBUG output above for rsyslog status/journal."
