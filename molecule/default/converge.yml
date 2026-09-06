@@ -1,7 +1,31 @@
 ---
 - name: Converge
   hosts: all
-  become: true
-  gather_facts: true
-  roles:
-    - role: buluma.netiq_sentinel_syslog_event_source
+  tasks:
+    - name: Run role
+      block:
+        - name: Include role
+          ansible.builtin.include_role:
+            name: buluma.netiq_sentinel_syslog_event_source
+      rescue:
+        # TEMPORARY: diagnosing "Unable to start service rsyslog: ... control
+        # process exited with error code" on almalinux10/rockylinux10 only.
+        - name: DEBUG | rsyslog service status
+          ansible.builtin.command: systemctl status rsyslog --no-pager -l
+          register: __debug_rsyslog_status
+          changed_when: false
+          failed_when: false
+        - name: DEBUG | print rsyslog service status
+          ansible.builtin.debug:
+            var: __debug_rsyslog_status.stdout_lines
+        - name: DEBUG | rsyslog journal
+          ansible.builtin.command: journalctl -u rsyslog --no-pager -n 200
+          register: __debug_rsyslog_journal
+          changed_when: false
+          failed_when: false
+        - name: DEBUG | print rsyslog journal
+          ansible.builtin.debug:
+            var: __debug_rsyslog_journal.stdout_lines
+        - name: Re-raise original failure
+          ansible.builtin.fail:
+            msg: "Role failed - see DEBUG output above for rsyslog status/journal."
