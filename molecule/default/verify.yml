@@ -8,9 +8,13 @@
     - name: Check if rsyslog is running
       ansible.builtin.service_facts:
 
+    - name: Determine rsyslog service_facts key
+      ansible.builtin.set_fact:
+        rsyslog_service_fact_key: "{{ ('rsyslog' in ansible_facts.services) | ternary('rsyslog', 'rsyslog.service') }}"
+
     - name: Assert rsyslog is active
       ansible.builtin.assert:
         that:
-          - "'rsyslog' in ansible_facts.services"
-          - "ansible_facts.services['rsyslog']['state'] == 'running'"
+          - "rsyslog_service_fact_key in ansible_facts.services"
+          - "ansible_facts.services[rsyslog_service_fact_key]['state'] == 'running'"
         quiet: true
