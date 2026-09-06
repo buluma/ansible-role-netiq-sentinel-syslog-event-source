@@ -7,6 +7,10 @@
         - name: Include role
           ansible.builtin.include_role:
             name: buluma.netiq_sentinel_syslog_event_source
+        # Handler failures are NOT caught by rescue unless flushed inside
+        # the block: they normally run at end-of-play, outside this scope.
+        - name: Flush handlers
+          ansible.builtin.meta: flush_handlers
       rescue:
         # TEMPORARY: diagnosing "Unable to start service rsyslog: ... control
         # process exited with error code" on almalinux10/rockylinux10 only.
