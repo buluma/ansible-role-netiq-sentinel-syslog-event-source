@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/compare/26.6.2...HEAD)
+
+**Merged pull requests:**
+
+- fix: default syslog\_implementation to rsyslog [\#18](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pull/18) ([buluma](https://github.com/buluma))
+
 ## [26.6.2](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/tree/26.6.2) (2026-07-24)
 
 [Full Changelog](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/compare/26.6.1...26.6.2)
