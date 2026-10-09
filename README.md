@@ -4,11 +4,11 @@ Ansible role for setting up a linux host as an event source to NetIQ Sentinel.
 
 |GitHub|Issues|Pull Requests|Version|Downloads|
 |------|------|-------------|-------|---------|
-|[![github](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/netiq_sentinel_syslog_event_source)](https://galaxy.ansible.com/ui/standalone/roles/buluma/netiq_sentinel_syslog_event_source/documentation)|
+|[![github](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-netiq_sentinel_syslog_event_source.svg)](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-netiq_sentinel_syslog_event_source.svg)](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-netiq_sentinel_syslog_event_source.svg)](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/netiq_sentinel_syslog_event_source)](https://galaxy.ansible.com/ui/standalone/roles/buluma/netiq_sentinel_syslog_event_source/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
+This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
 ---
@@ -20,7 +20,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
     - role: buluma.netiq_sentinel_syslog_event_source
 ```
 
-The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/molecule/default/prepare.yml):
+The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
@@ -66,7 +66,7 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 
 ## [Role Variables](#role-variables)
 
-The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/defaults/main.yml):
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/blob/master/defaults/main.yml):
 
 ```yaml
 ---
@@ -77,7 +77,7 @@ syslog_implementation: rsyslog
 
 ## [Requirements](#requirements)
 
-- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/requirements.txt).
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/blob/master/requirements.txt).
 
 ## [State of used roles](#state-of-used-roles)
 
@@ -93,7 +93,7 @@ This role is part of many compatible roles. Have a look at [the documentation of
 
 Here is an overview of related roles:
 
-![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/png/requirements.png "Dependencies")
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
@@ -112,11 +112,11 @@ The minimum version of Ansible required is 2.12, tests have been done on:
 - The current version.
 - The development version.
 
-If you find issues, please register them on [GitHub](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/issues).
+If you find issues, please register them on [GitHub](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/issues).
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 

@@ -1,34 +1,34 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/tree/HEAD)
+## [Unreleased](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/tree/HEAD)
 
-[Full Changelog](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/compare/26.6.2...HEAD)
-
-**Merged pull requests:**
-
-- fix: default syslog\_implementation to rsyslog [\#18](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pull/18) ([buluma](https://github.com/buluma))
-
-## [26.6.2](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/tree/26.6.2) (2026-07-24)
-
-[Full Changelog](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/compare/26.6.1...26.6.2)
-
-## [26.6.1](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/tree/26.6.1) (2026-06-14)
-
-[Full Changelog](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/compare/26.6.0...26.6.1)
-
-## [26.6.0](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/tree/26.6.0) (2026-06-14)
-
-[Full Changelog](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/compare/0.6.26...26.6.0)
+[Full Changelog](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/compare/26.6.2...HEAD)
 
 **Merged pull requests:**
 
-- Bump ansible/ansible-lint from 26.1.1 to 26.2.0 [\#9](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pull/9) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump release-drafter/release-drafter from 5 to 6 [\#8](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump actions/checkout from 4 to 6 [\#7](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
+- fix: default syslog\_implementation to rsyslog [\#18](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/pull/18) ([buluma](https://github.com/buluma))
 
-## [0.6.26](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/tree/0.6.26) (2022-06-26)
+## [26.6.2](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/tree/26.6.2) (2026-07-24)
 
-[Full Changelog](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/compare/3b4a35980c67fc74fb2bf51a989f2e68249ededd...0.6.26)
+[Full Changelog](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/compare/26.6.1...26.6.2)
+
+## [26.6.1](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/tree/26.6.1) (2026-06-14)
+
+[Full Changelog](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/compare/26.6.0...26.6.1)
+
+## [26.6.0](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/tree/26.6.0) (2026-06-14)
+
+[Full Changelog](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/compare/0.6.26...26.6.0)
+
+**Merged pull requests:**
+
+- Bump ansible/ansible-lint from 26.1.1 to 26.2.0 [\#9](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/pull/9) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump release-drafter/release-drafter from 5 to 6 [\#8](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 4 to 6 [\#7](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [0.6.26](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/tree/0.6.26) (2022-06-26)
+
+[Full Changelog](https://github.com/buluma/ansible-role-netiq_sentinel_syslog_event_source/compare/3b4a35980c67fc74fb2bf51a989f2e68249ededd...0.6.26)
 
 
 
