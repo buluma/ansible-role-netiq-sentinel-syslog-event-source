@@ -66,7 +66,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v7
         with:
-          path: ansible-role-netiq-sentinel-syslog-event-source
+          path: ansible-role-netiq_sentinel_syslog_event_source
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -94,11 +94,11 @@ jobs:
 
       - name: Test with molecule
         run: |
-          cd ansible-role-netiq-sentinel-syslog-event-source
+          cd ansible-role-netiq_sentinel_syslog_event_source
           molecule test
         env:
           PY_COLORS: 1
           ANSIBLE_FORCE_COLOR: 1
-          ANSIBLE_ROLES_PATH: ~/.ansible/roles:${GITHUB_WORKSPACE}/ansible-role-netiq-sentinel-syslog-event-source
+          ANSIBLE_ROLES_PATH: ~/.ansible/roles:${GITHUB_WORKSPACE}/ansible-role-netiq_sentinel_syslog_event_source
           image: ${{ matrix.distro.image }}
           tag: ${{ matrix.distro.tag }}

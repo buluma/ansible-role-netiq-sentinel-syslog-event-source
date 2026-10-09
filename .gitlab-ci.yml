@@ -2,7 +2,7 @@
 galaxy:
   needs: []
   script:
-    - ansible-galaxy role info buluma.netiq-sentinel-syslog-event-source
+    - ansible-galaxy role info buluma.netiq_sentinel_syslog_event_source
   stage: deploy
 image: buluma/github-action-molecule:4.0.7
 molecule:
@@ -61,7 +61,7 @@ role_testing:
         tag: latest
   retry: 1
   script:
-    - image=${image} tag=${tag} ansible-galaxy install buluma.netiq-sentinel-syslog-event-source
+    - image=${image} tag=${tag} ansible-galaxy install buluma.netiq_sentinel_syslog_event_source
   stage: test
 services:
   - docker:dind
