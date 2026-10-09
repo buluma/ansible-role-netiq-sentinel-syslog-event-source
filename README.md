@@ -1,10 +1,10 @@
-# [Ansible role netiq-sentinel-syslog-event-source](#ansible-role-netiq-sentinel-syslog-event-source)
+# [Ansible role netiq_sentinel_syslog_event_source](#ansible-role-netiq_sentinel_syslog_event_source)
 
 Ansible role for setting up a linux host as an event source to NetIQ Sentinel.
 
 |GitHub|Issues|Pull Requests|Version|Downloads|
 |------|------|-------------|-------|---------|
-|[![github](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/netiq-sentinel-syslog-event-source)](https://galaxy.ansible.com/ui/standalone/roles/buluma/netiq-sentinel-syslog-event-source/documentation)|
+|[![github](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-netiq-sentinel-syslog-event-source.svg)](https://github.com/buluma/ansible-role-netiq-sentinel-syslog-event-source/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/netiq_sentinel_syslog_event_source)](https://galaxy.ansible.com/ui/standalone/roles/buluma/netiq_sentinel_syslog_event_source/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
